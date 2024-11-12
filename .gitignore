@@ -1,2 +1,3 @@
 ./test/output.txt
+./test/test*.txt
 ./obj/*
