@@ -11,7 +11,7 @@
  * Param: filename string
  * Return: valid FILE pointer
  */
-FILE *get_valid_file(char *filename);
+FILE *get_valid_file(const char *filename);
 
 
 /*
@@ -20,7 +20,7 @@ FILE *get_valid_file(char *filename);
  *
  * Params: FILE pointer, filename string
  */
-void handle_invalid_file(FILE *file, char *filename);
+void handle_invalid_file(FILE *file, const char *filename);
 
 
 /*
@@ -29,7 +29,7 @@ void handle_invalid_file(FILE *file, char *filename);
  * Param: filename string
  * Return: true if .asm file, false otherwise
  */
-bool is_asm_file(char *filename);
+bool is_asm_file(const char *filename);
 
 
 /*

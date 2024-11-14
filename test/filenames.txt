@@ -1,0 +1,17 @@
+file.asm
+file
+file2.asm
+file.asm.asm
+file____.a
+file.aasm
+test.file
+.asm
+.asm.asm
+_.asm
+u.
+asm.
+.
+
+.asmtest.asm
+test.a.s.m
+msa.test
