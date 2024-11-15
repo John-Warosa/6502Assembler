@@ -1,24 +1,16 @@
 #ifndef INSTRUCTIONS_H
 #define INSTRUCTIONS_H
 
+#include "addressmodes.h"
+
 
 struct Instruction {
 	char *name;
-	struct {
-		unsigned int accumulator	: 1
-		unsigned int absolute		: 1
-		unsigned int absoluteX		: 1
-		unsigned int absoluteY		: 1
-		unsigned int immeiate		: 1
-		unsigned int implied		: 1
-		unsigned int indirect		: 1
-		unsigned int xIndirect		: 1
-		unsigned int indirectY		: 1
-		unsigned int relative		: 1
-		unsigned int zeropage		: 1
-		unsigned int zeropageX		: 1
-		unsigned int zeropageY		: 1
-	} modes;
+	int numModes;
+	
+	// no instruction has more than 8 modes
+	enum AddressModes modes[8];
+	int opcodes[8];
 };
 
 
