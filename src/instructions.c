@@ -1,6 +1,14 @@
 #include "instructions.h"
 
 
+
+/*------------------------------------------------------------------------------
+* This file defines all 56 legal instructions of the 6502
+* Illegal instructions may or may not be appended in the future
+------------------------------------------------------------------------------*/
+
+
+
 const struct Instruction InstructionList[56] = {
 	{
 		.name = "ADC",
