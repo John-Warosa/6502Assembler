@@ -1,7 +1,7 @@
 #include "instructions.h"
 
 
-const struct InstructionList[56] = {
+const struct Instruction InstructionList[56] = {
 	{
 		.name = "ADC",
 		.numModes = 8,
@@ -322,7 +322,7 @@ const struct InstructionList[56] = {
 	},
 
 	{
-		.name = EOR,
+		.name = "EOR",
 		.numModes = 8,
 		.modes = {
 			ABSOLUTE,
@@ -413,7 +413,7 @@ const struct InstructionList[56] = {
 		.name = "LDA",
 		.numModes = 8,
 		.modes = {
-			ASBOLUTE,
+			ABSOLUTE,
 			ABSOLUTE_X,
 			ABSOLUTE_Y,
 			IMMEDIATE,
@@ -479,7 +479,7 @@ const struct InstructionList[56] = {
 			ACCUMULATOR,
 			ABSOLUTE,
 			ABSOLUTE_X,
-			ZERPAGE,
+			ZEROPAGE,
 			ZEROPAGE_X,
 		},
 		.opcodes = {
@@ -500,6 +500,292 @@ const struct InstructionList[56] = {
 		.opcodes = {
 			0xea,
 		}
-	}
-}
+	},
 
+	{
+		.name = "ORA",
+		.numModes = 8,
+		.modes = {
+			ABSOLUTE,
+			ABSOLUTE_X,
+			ABSOLUTE_Y,
+			IMMEDIATE,
+			X_INDIRECT,
+			INDIRECT_Y,
+			ZEROPAGE,
+			ZEROPAGE_X,
+		},
+		.opcodes = {
+			0x0d,
+			0x1d,
+			0x19,
+			0x09,
+			0x01,
+			0x11,
+			0x05,
+			0x15,
+		}
+	},
+
+	{
+		.name = "PHA",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x48,
+		}
+	},
+
+	{
+		.name = "PHP",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x08,
+		}
+	},
+
+	{
+		.name = "PLA",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x68,
+		}
+	},
+
+	{
+		.name = "PLP",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x28,
+		}
+	},
+
+	{
+		.name = "ROL",
+		.numModes = 5,
+		.modes = {
+			ACCUMULATOR,
+			ABSOLUTE,
+			ABSOLUTE_X,
+			ZEROPAGE,
+			ZEROPAGE_X,
+		},
+		.opcodes = {
+			0x2a,
+			0x2e,
+			0x3e,
+			0x26,
+			0x36,
+		}
+	},
+
+	{
+		.name = "RTI",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x40,
+		}
+	},
+
+	{
+		.name = "RTS",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x60,
+		}
+	},
+
+	{
+		.name = "SBC",
+		.numModes = 8,
+		.modes = {
+			ABSOLUTE,
+			ABSOLUTE_X,
+			ABSOLUTE_Y,
+			IMMEDIATE,
+			X_INDIRECT,
+			INDIRECT_Y,
+			ZEROPAGE,
+			ZEROPAGE_X,
+		},
+		.opcodes = {
+			0xed,
+			0xfd,
+			0xf9,
+			0xe9,
+			0xe1,
+			0xf1,
+			0xe5,
+			0xf5,
+		}
+	},
+
+	{
+		.name = "SEC",
+		.numModes = 1,
+		.modes = {
+			IMMEDIATE,
+		},
+		.opcodes = {
+			0x38,
+		}
+	},
+
+	{
+		.name = "SED",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0xf8,
+		}
+	},
+
+	{
+		.name = "SEI",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x78,
+		}
+	},
+
+	{
+		.name = "STA",
+		.numModes = 7,
+		.modes = {
+			ABSOLUTE,
+			ABSOLUTE_X,
+			ABSOLUTE_Y,
+			X_INDIRECT,
+			INDIRECT_Y,
+			ZEROPAGE,
+			ZEROPAGE_X,
+		},
+		.opcodes = {
+			0x8d,
+			0x9d,
+			0x99,
+			0x81,
+			0x91,
+			0x85,
+			0x95,
+		}
+	},
+
+	{
+		.name = "STX",
+		.numModes = 3,
+		.modes = {
+			ABSOLUTE,
+			ZEROPAGE,
+			ZEROPAGE_Y,
+		},
+		.opcodes = {
+			0x8e,
+			0x86,
+			0x96,
+		}
+	},
+
+	{
+		.name = "STY",
+		.numModes = 3,
+		.modes = {
+			ABSOLUTE,
+			ZEROPAGE,
+			ZEROPAGE_X,
+		},
+		.opcodes = {
+			0x8c,
+			0x84,
+			0x94,
+		}
+	},
+
+	{
+		.name = "TAX",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0xaa,
+		}
+	},
+
+	{
+		.name = "TAY",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0xa8,
+		}
+	},
+
+	{
+		.name = "TSX",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0xba,
+		}
+	},
+
+	{
+		.name = "TXA",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x8a,
+		}
+	},
+
+	{
+		.name = "TXS",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x9a,
+		}
+	},
+
+	{
+		.name = "TYA",
+		.numModes = 1,
+		.modes = {
+			IMPLIED,
+		},
+		.opcodes = {
+			0x98,
+		}
+	},
+};

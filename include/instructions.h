@@ -17,4 +17,4 @@ struct Instruction {
 extern const struct Instruction instructionList[56];
 
 
-#endif INSTRUCTIONS_H
+#endif //INSTRUCTIONS_H
