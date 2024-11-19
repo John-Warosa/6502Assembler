@@ -17,8 +17,7 @@
 
 struct Tokens {
 	char *instruction;
-	enum AddressModes addressMode,
-	int address;
+	char *address;
 };
 
 

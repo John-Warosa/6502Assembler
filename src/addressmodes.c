@@ -1,4 +1,6 @@
 #include "addressmodes.h"
+#include <string.h>
+#include <ctype.h>
 
 
 static const char *addressTemplates[12] = {
@@ -15,3 +17,16 @@ static const char *addressTemplates[12] = {
 	"$**,X",		// ZEROPAGE_X
 	"$**,Y",		// ZEROPAGE_Y
 };
+
+
+bool match_address_mode(char *address, const char *addressTemplate) {
+	int len = strlen(addressTemplate);
+
+	for (int i = 0; i < len; ++i) {
+		if (addressTemplate[i] == '*') {
+			if (!isxdigit(address[i])) {
+				return false;
+			}
+		}
+	}
+}
