@@ -1,4 +1,4 @@
-#include "instructions.h"
+#include "instructions.h"inst
 
 
 
@@ -9,7 +9,7 @@
 
 
 
-const struct Instruction InstructionList[56] = {
+const struct Instruction InstructionList[INSTRUCTION_COUNT] = {
 	{
 		.name = "ADC",
 		.numModes = 8,

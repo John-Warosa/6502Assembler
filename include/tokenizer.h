@@ -16,7 +16,7 @@
 
 
 struct Tokens {
-	char *instruction;
+	char *mnemonic;
 	char *address;
 };
 

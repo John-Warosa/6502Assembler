@@ -31,7 +31,7 @@ struct Instruction {
 };
 
 
-extern const struct Instruction instructionList[56];
+extern const struct Instruction instructionList[INSTRUCTION_COUNT];
 
 
 #endif //INSTRUCTIONS_H

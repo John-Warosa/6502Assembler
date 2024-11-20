@@ -2,6 +2,7 @@
 #define PARSER_H
 
 #include "tokenizer.h"
+#include "addressmodes.h"
 
 
 /*------------------------------------------------------------------------------
@@ -27,7 +28,7 @@ struct Bytecode {
 struct Bytecode get_bytes(struct Tokens tokens);
 
 
-int get_instruction_byte(char *instruction);
+int get_instruction_byte(char *menmonic, enum AddressModes addressMode);
 
 
 int get_address_byte(char *address);
