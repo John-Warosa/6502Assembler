@@ -1,11 +1,15 @@
 #include "parser.h"
+#include "tokenizer.h"
 #include "instructions.h"
 #include "errorhandler.h"
 #include <string.h>
 
 
-struct Bytecode get_bytes(struct Tokens tokens) {
+struct Bytecode get_bytes(char *line) {
 	struct Bytecode bytes;
+	struct Tokens tokens = get_tokens(line);
+	
+	tokens.
 }
 
 

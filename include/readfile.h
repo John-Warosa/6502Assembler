@@ -33,12 +33,11 @@ bool is_asm_file(const char *filename);
 
 
 /*
- * Gets the current line of a file
+ * Gets the current line of a file and writes it into line
  *
- * Param: valid FILE pointer
- * Return: string of current line
+ * Param: valid FILE pointer, line string to write to
  */
-char *get_line(FILE *file);
+void get_line(const FILE *file, char *line);
 
 
 #endif //READFILE_H

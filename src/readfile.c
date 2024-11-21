@@ -1,7 +1,7 @@
 #include "readfile.h"
 #include "errorhandler.c"
 
-#define MAXLINE 100
+#define MAXLINE 82
 
 
 FILE *get_valid_file(char *filename) {
@@ -30,15 +30,17 @@ bool is_asm_file(char *filename) {
 }
 
 
-char *get_line(FILE *file) {
-	char *line = malloc(MAXLINE * sizeof(char));
+void get_line(FILE *file, char *line) {
+	char c;
 
-	if (line == nullptr)
-		throw_error(ALLOCATION_ERROR);
+	for (int i = 0; i < MAXLINE; ++i) {
+		c = fgetc(file);
 
-	if (fgets(line, MAXLINE, file) == nullptr)
-		throw_error(READ_LINE_ERROR);
+		if (c == EOF || c == '\n' || c == ';') {
+			line[i] = '\0';
+			break;
+		}
 
-	// only reaches if line was successfully read
-	return line;
-}
+		line[i] = c;
+	}
+};

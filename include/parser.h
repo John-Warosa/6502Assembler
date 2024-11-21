@@ -1,7 +1,6 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include "tokenizer.h"
 #include "addressmodes.h"
 
 
@@ -25,7 +24,17 @@ struct Bytecode {
  * Param: line string
  * Return: Bytecode struct representing the input
  */
-struct Bytecode get_bytes(struct Tokens tokens);
+struct Bytecode get_bytes(char *line);
+
+
+/*
+ * Gets the number of bytes a line takes up
+ *
+ * Param: address mode
+ * return: number of bytes per line (1 to 3)
+ */
+int get_num_bytes(enum AddressModes addressMode);
+
 
 
 int get_instruction_byte(char *menmonic, enum AddressModes addressMode);
