@@ -4,12 +4,15 @@
 #include "errorhandler.h"
 #include <string.h>
 
+#define INST_SIZE 4
+#define ADDR_SIZE 8
+
 
 struct Bytecode get_bytes(char *line) {
 	struct Bytecode bytes;
 	struct Tokens tokens = get_tokens(line);
 	
-	tokens.
+	tokens.mnemonic = malloc()
 }
 
 

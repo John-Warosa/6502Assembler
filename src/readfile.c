@@ -1,10 +1,8 @@
 #include "readfile.h"
-#include "errorhandler.c"
-
-#define MAXLINE 82
+#include <stdio.h>
 
 
-FILE *get_valid_file(char *filename) {
+FILE *get_file(char *filename) {
 	FILE *file = fopen("r", filename);
 
 	handle_invalid_file(file, filename);
@@ -14,12 +12,14 @@ FILE *get_valid_file(char *filename) {
 }
 
 
-void handle_invalid_file(FILE *file, char *filename) {
-	if (FILE == nullptr)
-		throw_error(FILE_NOT_FOUND_ERROR);
+void is_invalid_file(FILE *file, char *filename) {
+	if (file == nullptr) 
+		return true;
 
 	if (!is_asm_file(filename))
-		throw_Error(INVALID_FILE_FORMAT_ERROR);
+		return true;
+
+	return false;
 }
 
 

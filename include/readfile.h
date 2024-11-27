@@ -3,24 +3,24 @@
 
 #include <stdio.h>
 
+#define MAXLINE 82
+
 
 /*
- * Opens a given file and checks its validity
- * Throws an error if file is invalid
+ * Opens a given file
  *
  * Param: filename string
- * Return: valid FILE pointer
+ * Return: FILE pointer or nullptr
  */
-FILE *get_valid_file(const char *filename);
+FILE *get_file(const char *filename);
 
 
 /*
  * Checks if file is valid
- * Throws an error if file is invalid
  *
  * Params: FILE pointer, filename string
  */
-void handle_invalid_file(FILE *file, const char *filename);
+void is_invalid_file(const FILE *file, const char *filename);
 
 
 /*
